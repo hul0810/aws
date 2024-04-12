@@ -1,0 +1,51 @@
+{
+	"serviceName": "Enter your service name",
+	"cluster": "Enter your cluster name",
+	"loadBalancers": [
+		{
+			"targetGroupArn": "Enter your ARN here",
+			"containerName": "Enter your container name",
+			"containerPort": "Container port"
+		},
+		{
+			"targetGroupArn": "Enter your ARN here",
+			"containerName": "Enter your container name",
+			"containerPort": "Container port"
+		}
+	],
+	"serviceRegistries": [],
+	"desiredCount": 1,
+	"launchType": "EC2",
+	"taskDefinition": "Enter your Task Definition ARN",
+	"deploymentConfiguration": {
+		"deploymentCircuitBreaker": {
+			"enable": true,
+			"rollback": false
+		},
+		"maximumPercent": 200,
+		"minimumHealthyPercent": 0
+	},
+	"placementConstraints": [],
+	"placementStrategy": [],
+	"networkConfiguration": {
+		"awsvpcConfiguration": {
+			"subnets": [
+				"Subnet ID 1",
+				"Subnet ID 2",
+				"Subnet ID 3"
+			],
+			"securityGroups": [
+				"Enter Security group ID"
+			],
+			"assignPublicIp": "DISABLED"
+		}
+	},
+	"healthCheckGracePeriodSeconds": 0,
+	"schedulingStrategy": "REPLICA",
+	"deploymentController": {
+		"type": "ECS"
+	},
+	"enableECSManagedTags": true,
+	"propagateTags": "NONE",
+	"enableExecuteCommand": false
+}
